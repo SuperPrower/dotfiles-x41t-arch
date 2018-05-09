@@ -29,7 +29,7 @@ alias orphans='pacman -Qtdq'
 
 export EDITOR=nvim
 
-export WALLPAPER="$HOME/wallpapers/laidbackcamp.jpg"
+export WALLPAPER="$HOME/wallpapers/mt_fuji_3.jpg"
 # export LOCKSCREEN_IMAGE="$HOME/wallpapers/magenta_park.jpg"
 
 # Man pages color
