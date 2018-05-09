@@ -1,0 +1,217 @@
+[colors]
+background = ${xrdb:color0}
+
+red 	= ${xrdb:color1}
+green 	= ${xrdb:color2}
+yellow 	= ${xrdb:color3}
+blue 	= ${xrdb:color4}
+magenta	= ${xrdb:color5}
+
+[bar/default]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 32
+;offset-x = 1%
+;offset-y = 1%
+fixed-center = false
+
+bottom = true
+
+background = ${colors.background}
+
+line-size = 2
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = xos4 Terminus:size=10;3
+font-1 = FontAwesome:size=10;3
+
+modules-left = i3
+modules-center =
+modules-right = keyboard memory swap cpu wlan eth battery temperature date
+
+tray-position = right
+tray-padding = 1
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+; cursor-scroll = ns-resize
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+index-sort = true
+
+enable-scroll = false
+wrapping-scroll = false
+
+fuzzy-match = true
+format = <label-state> <label-mode>
+
+label-mode-padding = 2
+label-mode-underline = ${colors.red}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-padding = 2
+label-focused-underline = ${colors.yellow}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-padding = 2
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-padding = 2
+label-urgent-underline = ${colors.red}
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+label-layout = ed%
+format-underline = ${colors.yellow}
+
+[module/memory]
+type = internal/memory
+interval = 5
+format = MEM <label>
+format-underline = ${colors.yellow}
+label = %percentage_used%
+
+[module/swap]
+type = internal/memory
+interval = 5
+format = SWP <label>
+format-underline = ${colors.yellow}
+label = %mb_swap_used%
+
+[module/cpu]
+type = internal/cpu
+interval = 10
+label = CPU %percentage%%
+format-underline = ${colors.blue}
+
+[module/eth]
+type = internal/network
+interface = enp2s0
+interval = 5
+
+format-connected =  <label-connected>
+format-connected-underline = ${colors.green}
+label-connected = %local_ip%
+
+format-disconnected = 
+
+[module/wlan]
+type = internal/network
+interface = wlp4s2
+interval = 3
+
+format-connected =  <label-connected>
+format-connected-underline = ${colors.green}
+label-connected = %essid%
+
+format-disconnected = 
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+battery = BAT0
+adapter = AC
+
+poll-interval = 5
+
+time-format = %H:%M
+
+format-charging = <ramp-capacity><label-charging>
+format-charging-underline = ${colors.yellow}
+label-charging = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colors.red}
+label-discharging = %percentage%% (%time%)
+
+format-full = <ramp-capacity> <label-full>
+format-full-underline = ${colors.green}
+label-full = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/temperature]
+type = internal/temperature
+interval = 3
+
+thermal-zone = 0
+hwmon-path = /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon1/temp1_input
+
+warn-temperature = 65
+
+format = <ramp> <label>
+format-underline = ${colors.yellow}
+
+format-warn = <ramp><label-warn>
+format-warn-underline = ${colors.red}
+
+label = %temperature%
+label-warn = %temperature%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+[module/date]
+type = internal/date
+interval = 3
+
+date = %b %d, %Y
+time = %H:%M
+
+format = <label>
+format-underline = ${colors.magenta}
+
+label = %date% %time%
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
