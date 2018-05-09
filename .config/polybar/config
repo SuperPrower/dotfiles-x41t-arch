@@ -149,7 +149,7 @@ poll-interval = 5
 
 time-format = %H:%M
 
-format-charging = <ramp-capacity><label-charging>
+format-charging = <ramp-capacity> <label-charging>
 format-charging-underline = ${colors.yellow}
 label-charging = %percentage%%
 
@@ -179,7 +179,7 @@ warn-temperature = 65
 format = <ramp> <label>
 format-underline = ${colors.yellow}
 
-format-warn = <ramp><label-warn>
+format-warn = <ramp> <label-warn>
 format-warn-underline = ${colors.red}
 
 label = %temperature%

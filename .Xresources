@@ -20,7 +20,7 @@ URxvt*utf8:		true
 ! urxvt plugins
 ! ================
 URxvt.perl-ext-common: 	keyboard-select,font-size
-URxvt.keysym.M-s:	perl:keyboard-select:activate
+URxvt.keysym.M-S:	perl:keyboard-select:activate
 
 ! `font-size` plugin
 URxvt.keysym.C-minus: 	perl:font-size:decrease
@@ -30,7 +30,7 @@ URxvt.keysym.C-equal: 	perl:font-size:increase
 ! size only really makes sense for anti-aliased fonts (Terminus is bitmapped),
 ! and because anti-aliased fonts support any size, it makes sense to just use a
 ! size step of 4 for faster transitions between font size changes.
-URxvt.font-size.step: 	1
+URxvt.font-size.step: 	4
 
 ! =================
 ! Xft configuration
