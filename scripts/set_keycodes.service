@@ -1,0 +1,9 @@
+[Unit]
+Description=Assign keycodes to X41t Tablet Keys
+
+[Service]
+Type=oneshot
+ExecStart=/home/superprower/scripts/set_keycodes.sh
+
+[Install]
+WantedBy=multi-user.target

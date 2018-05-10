@@ -111,7 +111,7 @@ exec_always --no-startup-id "killall polybar; polybar -r default"
 exec_always --no-startup-id feh --bg-scale $WALLPAPER
 
 # X41t keys
-bindsym XF86RotateWindows exec --no-startup-id "/home/superprower/scripts/rotate.sh"
-bindsym XF86Tools exec --no-startup-id "notify-send 'test'
+bindsym XF86RotateWindows exec --no-startup-id /home/superprower/scripts/rotate_screen.sh
+bindsym XF86Tools exec --no-startup-id notify-send test
 
 # vim:filetype=i3
