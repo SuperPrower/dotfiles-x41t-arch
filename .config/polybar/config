@@ -101,7 +101,7 @@ type = internal/memory
 interval = 5
 format = MEM <label>
 format-underline = ${colors.yellow}
-label = %percentage_used%
+label = %percentage_used%%
 
 [module/swap]
 type = internal/memory

@@ -7,11 +7,11 @@ URxvt*scrollBar:	false
 
 URxvt*letterSpace: 	0
 
-URxvt*font:		xft:xos4 Terminus:pixelsize=10, \
-			xft:xos4 Terminess Powerline:pixelsize=10
+URxvt*font:		xft:xos4 Terminus:pixelsize=12, \
+			xft:xos4 Terminess Powerline:pixelsize=12
 
-URxvt*boldFont:		xtf:xos4 Terminus:pixelsize=10:weight=bold, \
-			xft:xos4 Terminess Powerline:pixelsize=10
+URxvt*boldFont:		xtf:xos4 Terminus:pixelsize=12:weight=bold, \
+			xft:xos4 Terminess Powerline:pixelsize=12:weight=bold
 
 URxvt.iso14755:		false
 URxvt*utf8:		true
@@ -36,11 +36,13 @@ URxvt.font-size.step: 	4
 ! Xft configuration
 ! =================
 
+Xft.dpi:		105.8
+Xft.lcdfilter:		lcddefault
 Xft.antialias:     	true
-Xft.rgba:		subpixel
-Xft.hinting:       	false
-Xft.hintstyle:		hintslight
-! Xft.lcdfilter:	lcddefault
+Xft.rgba:		rgb
+Xft.hinting:       	true
+Xft.autohint:		false
+Xft.hintstyle:		hintfull
 
 ! ============
 ! color scheme
