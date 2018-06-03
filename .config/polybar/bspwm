@@ -1,0 +1,30 @@
+type = internal/bspwm
+
+; disable scrolling trough workspaces
+enable-scroll = false
+
+format = <label-state> <label-mode>
+
+label-mode-padding = 2
+label-mode-underline = ${colors.red}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-padding = 2
+label-focused-underline = ${colors.yellow}
+
+; unfocused = Inactive workspace on any monitor
+label-occupied = %index%
+label-occupied-padding = 2
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-padding = 2
+label-urgent-underline = ${colors.red}
+
+label-empty = %index%
+label-empty-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+; vim:ft=dosini
