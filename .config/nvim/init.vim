@@ -81,6 +81,7 @@ call plug#begin("~/.local/share/nvim/plugged")
 
 	" syntax highlighting
 	Plug 'PotatoesMaster/i3-vim-syntax', { 'for': 'i3' }
+	Plug 'baskerville/vim-sxhkdrc'
 	Plug 'octol/vim-cpp-enhanced-highlight'
 
 	" latex

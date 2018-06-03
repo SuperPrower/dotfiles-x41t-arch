@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# autostart for bspwm
+
+feh --bg-scale $WALLPAPER &
+nm-applet &

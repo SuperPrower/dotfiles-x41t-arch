@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+sxhkd &
+/home/superprower/.config/bspwm/autostart &
+polybar -r bspwm &
+
+bspc monitor -d 1 2 3 4 5
+
+bspc config pointer_action1 move
+bspc config pointer_action3 resize_corner
+# Alt
+bspc config pointer_modifier mod1
+
+bspc config window_gap 1

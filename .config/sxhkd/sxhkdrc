@@ -1,0 +1,56 @@
+# Reload sxhkd config
+alt + shift + c
+	pkill -USR1 -x sxhkd ; killall polybar; polybar -r bspwm
+
+# Run terminal emulator
+alt + Return
+	urxvt
+
+# Program launcher
+alt + r
+	rofi -show run
+
+# Quit bspwm
+alt + shift + e
+	bspc quit
+
+# Close window
+alt + shift + q
+	bspc node -c
+
+# Alternate between monocle and tiled layout
+alt + m
+	bspc desktop -l next
+
+# Switch to prev/next node (useful for monocle)
+alt + bracket{left,right}
+	bspc node -f {prev,next}.local
+
+# Select/Swap with the window on the given direction
+alt + {_,shift + } {h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Focus / Send to the given desktop
+alt + {_,shift +} {1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Make window fullscreen / floating
+alt + {f,shift + space}
+	bspc node -t ~{fullscreen,floating}
+
+# Make window tiled / pseudo-tiled
+alt + {_,shift +} t
+	bspc node -t ~{tiled,pseudo_tiled}
+
+# Preselect the direction
+alt + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# Cancel preselection for the focused node
+alt + ctrl + space
+	bspc node -p cancel
+
+# Expand window by moving one of it's sides outward
+# Or with shift : contract a window by moving one of it's sides inward
+alt + ctrl + r : {h,j,k,l,shift + h,shift + j,shift + k,shift + l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0,right -20 0,top 0 20,bottom 0 -20,left 20 0}
