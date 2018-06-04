@@ -105,7 +105,10 @@ smart_borders on
 
 # autostart
 exec --no-startup-id nm-applet
-exec_always --no-startup-id "killall polybar; polybar -r default"
+# exec_always --no-startup-id "killall polybar; polybar -r default"
+exec_always --no-startup-id /home/superprower/scripts/restart_polybar.sh
+
+exec --no-startup-id onboard
 
 # wallpaper
 exec_always --no-startup-id feh --bg-scale $WALLPAPER

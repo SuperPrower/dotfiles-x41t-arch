@@ -1,0 +1,52 @@
+type = custom/menu
+
+; If true, <label-toggle> will be to the left of the menu items (default).
+; If false, it will be on the right of all the items.
+expand-right = true
+
+; "menu-LEVEL-N" has the same properties as "label-NAME" with
+; the additional "exec" property
+;
+; Available exec commands:
+;   menu-open-LEVEL
+;   menu-close
+; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
+
+menu-0-0 = Browser
+menu-0-0-exec = qutebrowser &
+menu-0-1 = Tablet
+menu-0-1-exec = menu-open-1
+menu-0-2 = Utils
+menu-0-2-exec = menu-open-2
+
+; menu-0-0 = Apps
+; menu-0-0-exec = menu-open-1
+; menu-1-0 = qutebrowser
+; menu-1-0-exec = qutebrowser &
+
+menu-1-0 = XReader
+menu-1-0-exec = xreader &
+menu-1-1 = Gimp
+menu-1-1-exec = gimp &
+menu-1-2 = Xournal
+menu-1-2-exec = xournal &
+
+menu-2-0 = urxvt
+menu-2-0-exec = urxvt &
+menu-2-1 = arandr
+menu-2-1-exec = arandr &
+
+; Available tags:
+;   <label-toggle> (default) - gets replaced with <label-(open|close)>
+;   <menu> (default)
+format = <label-toggle> <menu>
+format-underline = ${colors.yellow}
+
+label-open = App Menu
+label-close = [X]
+
+; Optional item separator
+; Default: none
+label-separator = " | "
+
+; vim:ft=dosini

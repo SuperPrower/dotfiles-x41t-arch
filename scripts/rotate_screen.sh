@@ -27,5 +27,5 @@ case $rotation in
 		;;
 esac
 
-# Restart i3 to restart polybar, re-set wallpaper, etc.
+# Restart i3 to re-set wallpaper, restart polybar, etc
 i3-msg "restart"
