@@ -1,0 +1,13 @@
+# Tablet Keys
+# evdev:atkdb:dmi:bvnIBM:bvr*:bd*:svnIBM:pn1324354:pvr*
+evdev:input:b0011v0001p00001eAB41*
+ KEYBOARD_KEY_6c=direction # Rotate Key
+ KEYBOARD_KEY_68=config # Toolbox
+ KEYBOARD_KEY_6b=esc # go figure 
+ KEYBOARD_KEY_69=enter
+ KEYBOARD_KEY_6e=pageup
+ KEYBOARD_KEY_6d=pagedown
+
+# 'Blue' keys on keyboard
+evdev:input:b0019v1014p5054v4101*
+ KEYBOARD_KEY_ZOOM=search
