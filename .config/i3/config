@@ -106,12 +106,15 @@ smart_borders on
 # autostart
 exec --no-startup-id nm-applet
 exec --no-startup-id onboard
+exec --no-startup-id xfce4-clipman
 
 # exec_always --no-startup-id "killall polybar; polybar -r default"
 exec_always --no-startup-id /home/superprower/scripts/restart_polybar.sh
 
 # wallpaper
 exec_always --no-startup-id feh --bg-fill $WALLPAPER
+
+bindsym Print exec --no-startup-id xfce4-screenshooter
 
 # X41t keys
 bindsym XF86RotateWindows exec --no-startup-id /home/superprower/scripts/rotate_screen.sh
