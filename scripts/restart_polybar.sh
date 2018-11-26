@@ -10,10 +10,10 @@ rotation_file="$script_dir/SCREEN_ROTATION"
 rotation="$(<"$rotation_file")"
 
 case $rotation in
-	0) # Standard landscape
+	0) # Normal
 		killall polybar ; polybar -r landscape &
 		;;
-	1) # Clockwise portrait
+	[1-3]) # Tablet
 		killall polybar ; polybar -r portrait &
 		;;
 esac

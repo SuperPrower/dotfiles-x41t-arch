@@ -24,10 +24,6 @@ noremap <Down> 	:echo "hjkl"<CR>
 noremap <Left> 	:echo "hjkl"<CR>
 noremap <Right>	:echo "hjkl"<CR>
 
-" use tab to select pop-up menu - ncm/deoplete
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
 " Formatting
 " set autoindent
 set noexpandtab
@@ -66,18 +62,27 @@ call plug#begin("~/.local/share/nvim/plugged")
 	Plug 'vim-airline/vim-airline-themes'
 
 	" autocompletion
-	Plug 'roxma/nvim-completion-manager'
-	Plug 'roxma/ncm-clang'
+	Plug 'ncm2/ncm2'
+	Plug 'roxma/nvim-yarp'
+
+	Plug 'ncm2/ncm2-pyclang'
+	Plug 'ncm2/ncm2-jedi'
+	Plug 'ncm2/ncm2-racer'
+
+	Plug 'ncm2/ncm2-neoinclude'
+	Plug 'ncm2/ncm2-path'
+	Plug 'ncm2/ncm2-vim'
+	Plug 'ncm2/ncm2-bufword'
 
 	Plug 'Shougo/neoinclude.vim'	" include files
-	Plug 'Shougo/neco-vim'		" vim configuration
 	Plug 'Shougo/neosnippet.vim'	" snippets and function expansion
+	Plug 'Shougo/neco-vim'		" vim configuration
 
 	" ctags
 	Plug 'ludovicchabant/vim-gutentags'
 
 	" linting
-	Plug 'w0rp/ale'
+	" Plug 'w0rp/ale'
 
 	" syntax highlighting
 	Plug 'PotatoesMaster/i3-vim-syntax', { 'for': 'i3' }
@@ -125,14 +130,20 @@ let g:airline_section_z=airline#section#create(['line',':%v'])
 " Get rid of default mode indicator
 set noshowmode
 
-" =
-" nvim completion manager settings
-" =
+" =============
+" ncm2 settings
+" =============
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+set completeopt=noinsert,menuone,noselect
 
 " suppress completion messages
 set shortmess+=c
 
-let g:cm_refresh_length = [[1, 3], [7, 2], [8, 3]]
+let g:ncm2#complete_length = [[1, 3], [7, 2], [8, 3]]
+
+au TextChangedI * call ncm2#auto_trigger()
 
 " ===================
 " neosnippet settings
@@ -145,8 +156,13 @@ let g:neosnippet#disable_runtime_snippets = {
 
 let g:neosnippet#snippets_directory = "~/.config/nvim/snippets/"
 
+" use tab to select pop-up menu - ncm/deoplete
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " If snippet is expandable, expand it on Enter, else insert new line
-imap <expr><CR>  (pumvisible() && neosnippet#expandable()) ? "\<Plug>(neosnippet_expand)" : "\<CR>"
+" works bad without ncm2 support, wait for https://github.com/ncm2/ncm2/issues/31
+" imap <expr><CR>  (pumvisible() && neosnippet#expandable()) ? "\<Plug>(neosnippet_expand)" : "\<CR>"
 
 " If there is a tag, jump to it on Ctrl+J
 imap <expr><C-j> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<C-j>"

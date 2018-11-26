@@ -12,4 +12,6 @@ else
 
 	setkeycodes 6c 153 # Rotate
 	setkeycodes 68 171 # Toolbox
+
+	setkeycodes 67 184 # XF86Launch5
 fi

@@ -12,29 +12,30 @@ expand-right = true
 ;   menu-close
 ; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
 
-menu-0-0 = Browser
-menu-0-0-exec = qutebrowser &
+menu-0-0 = Web
+menu-0-0-exec = menu-open-1
 menu-0-1 = Tablet
-menu-0-1-exec = menu-open-1
+menu-0-1-exec = menu-open-2
 menu-0-2 = Utils
-menu-0-2-exec = menu-open-2
+menu-0-2-exec = menu-open-3
 
-; menu-0-0 = Apps
-; menu-0-0-exec = menu-open-1
-; menu-1-0 = qutebrowser
-; menu-1-0-exec = qutebrowser &
+menu-1-0 = qutebrowser
+menu-1-0-exec = qutebrowser &
+menu-1-1 = dillo
+menu-1-1-exec = dillo &
 
-menu-1-0 = XReader
-menu-1-0-exec = xreader &
-menu-1-1 = Gimp
-menu-1-1-exec = gimp &
-menu-1-2 = Xournal
-menu-1-2-exec = xournal &
+menu-2-0 = XReader
+menu-2-0-exec = xreader &
+menu-2-1 = Gimp
+menu-2-1-exec = gimp &
+menu-2-2 = Xournal
+menu-2-2-exec = xournal &
 
-menu-2-0 = urxvt
-menu-2-0-exec = urxvt &
-menu-2-1 = arandr
-menu-2-1-exec = arandr &
+menu-3-0 = urxvt
+menu-3-0-exec = urxvt &
+menu-3-1 = arandr
+menu-3-1-exec = arandr &
+
 
 ; Available tags:
 ;   <label-toggle> (default) - gets replaced with <label-(open|close)>

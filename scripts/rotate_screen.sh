@@ -15,13 +15,25 @@ rotation="$(<"$rotation_file")"
 case $rotation in
 	0) # Standard landscape
 		echo "1" > $rotation_file
-		xrandr -o 3
+		xrandr -o right
 		xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate cw
 		xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate cw
 		;;
 	1) # Clockwise portrait
+		echo "2" > $rotation_file
+		xrandr -o inverted
+		xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate half
+		xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate half
+		;;
+	2) # Upside-down portrait
+		echo "3" > $rotation_file
+		xrandr -o left
+		xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate ccw
+		xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate ccw
+		;;
+	3) # Counter-clockwise portrait
 		echo "0" > $rotation_file
-		xrandr -o 0
+		xrandr -o normal
 		xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate none
 		xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate none
 		;;

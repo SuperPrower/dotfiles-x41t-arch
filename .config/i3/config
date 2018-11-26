@@ -10,7 +10,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -107,6 +108,7 @@ smart_borders on
 exec --no-startup-id nm-applet
 exec --no-startup-id onboard
 exec --no-startup-id xfce4-clipman
+exec --no-startup-id urxvtd
 
 # exec_always --no-startup-id "killall polybar; polybar -r default"
 exec_always --no-startup-id /home/superprower/scripts/restart_polybar.sh
@@ -118,6 +120,7 @@ bindsym Print exec --no-startup-id xfce4-screenshooter
 
 # X41t keys
 bindsym XF86RotateWindows exec --no-startup-id /home/superprower/scripts/rotate_screen.sh
-bindsym XF86Tools exec --no-startup-id notify-send test
+bindsym XF86Tools exec --no-startup-id notify-send Toolbox
+bindsym XF86Launch5 exec --no-startup-id notify-send Launch5
 
 # vim:filetype=i3
