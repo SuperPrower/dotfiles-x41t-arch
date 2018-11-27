@@ -32,17 +32,19 @@ URxvt.keysym.C-equal: 	perl:font-size:increase
 ! size step of 4 for faster transitions between font size changes.
 URxvt.font-size.step: 	4
 
+! icon
+URxvt*iconFile: 	/usr/share/icons/Paper/32x32/apps/utilities-terminal.png
 ! =================
 ! Xft configuration
 ! =================
 
-Xft.dpi:		105.8
-Xft.lcdfilter:		lcddefault
-Xft.antialias:     	true
-Xft.rgba:		rgb
-Xft.hinting:       	true
-Xft.autohint:		false
-Xft.hintstyle:		hintfull
+! Xft.dpi:		105.8
+! Xft.lcdfilter:		lcddefault
+! Xft.antialias:     	true
+! Xft.rgba:		rgb
+! Xft.hinting:       	true
+! Xft.autohint:		false
+! Xft.hintstyle:		hintfull
 
 ! ============
 ! color scheme
