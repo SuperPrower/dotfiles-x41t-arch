@@ -16,26 +16,26 @@ case $rotation in
 	0) # Standard landscape
 		echo "1" > $rotation_file
 		xrandr -o right
-		xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate cw
-		xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate cw
+		xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate cw
+		xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate cw
 		;;
 	1) # Clockwise portrait
 		echo "2" > $rotation_file
 		xrandr -o inverted
-		xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate half
-		xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate half
+		xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate half
+		xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate half
 		;;
 	2) # Upside-down portrait
 		echo "3" > $rotation_file
 		xrandr -o left
-		xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate ccw
-		xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate ccw
+		xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate ccw
+		xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate ccw
 		;;
 	3) # Counter-clockwise portrait
 		echo "0" > $rotation_file
 		xrandr -o normal
-		xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate none
-		xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate none
+		xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate none
+		xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate none
 		;;
 esac
 

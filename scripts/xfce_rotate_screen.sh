@@ -19,29 +19,29 @@ then
 		0) # Standard landscape
 			echo "1" > $rotation_file
 			xrandr -o right
-			xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate cw
-			xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate cw
+			xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate cw
+			xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate cw
 			xfconf-query -c xsettings -p /Xft/RGBA -s rgb
 			;;
 		1) # Clockwise portrait
 			echo "2" > $rotation_file
 			xrandr -o inverted
-			xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate half
-			xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate half
+			xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate half
+			xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate half
 			   xfconf-query -c xsettings -p /Xft/RGBA -s bgr
 			;;
 		2) # Upside-down landscape
 			echo "3" > $rotation_file
 			xrandr -o left
-			xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate ccw
-			xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate ccw
+			xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate ccw
+			xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate ccw
 			xfconf-query -c xsettings -p /Xft/RGBA -s vrgb
 			;;
 		3) # Counter-clockwise portrait
 			echo "0" > $rotation_file
 			xrandr -o normal
-			xsetwacom set "Wacom Serial Penabled Pen stylus" Rotate none
-			xsetwacom set "Wacom Serial Penabled Pen eraser" Rotate none
+			xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate none
+			xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate none
 			xfconf-query -c xsettings -p /Xft/RGBA -s rgb
 			;;
 	esac
